@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import JobDescriptionRenderer from "./components/JobDescriptionRenderer";
+import JobsRenderer from "./components/JobsRenderer";
+import Navbar from "./components/Navbar";
+import Searchbar from "./components/Searchbar";
 
-function App() {
+const App = () => {
+  const [selectedJob, setSelectedJob] = useState(null);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <div className="container py-4">
+        <div className="row">
+          <div className="col-sm-12 col-md-12 col-lg-4">
+            <Searchbar />
+            <hr />
+            <JobsRenderer setSelectedJob={setSelectedJob} />
+          </div>
+          {selectedJob ? (
+            <div className="col-sm-12 col-md-12 col-lg-8">
+              <JobDescriptionRenderer selectedJob={selectedJob} />
+            </div>
+          ) : null}
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;

@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.jobs-renderer {
+  height: 75vh !important;
+  overflow: auto;
+  margin-top: 2%;
+}
+
+.card {
+  cursor: pointer;
+}
+
+.card:hover {
+  border: 1px solid rgb(97, 97, 97);
+  -webkit-box-shadow: -10px 0px 13px -7px #4d4d4d, 10px 0px 13px -7px #4d4d4d, 5px 5px 15px 5px rgba(0,0,0,0); 
+  box-shadow: -10px 0px 13px -7px #4d4d4d, 10px 0px 13px -7px #4d4d4d, 5px 5px 15px 5px rgba(0,0,0,0);
+  transition: all 0.2s;
+}
